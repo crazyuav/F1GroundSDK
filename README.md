@@ -1,37 +1,99 @@
-# Gnd
+﻿# COOLFLY-地面端
 
-#### 介绍
-COOLFLY 遥控器地面端
+标签（空格分隔）： 未分类
 
-#### 软件架构
-软件架构说明
+---
 
+推荐配置:
 
-#### 安装教程
++ 系统: Ubuntu 16.04
++ SDK 版本: gcc-arm-none-eabi-5_2-2015q4
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+## 一、安装 SDK 
 
-#### 使用说明
+国内用户推荐下载使用
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1.  下载 gcc 编译器；
 
-#### 参与贡献
+    ```
+    https://launchpadlibrarian.net/231142403/gcc-arm-none-eabi-5_2-2015q4-20151219-linux.tar.bz2 
+    ```
+    
+2. 切换到 SDK 下载目录（一般为 Downloads)，解压到 `/opt/toolchain/`；
+    
+    ```
+    sudo mkdir -p /opt/toolchain/ && cd ~/Downloads 
+    
+    sudo tar jxvf gcc-arm-none-eabi-5_2-2015q4-20151219-linux.tar.bz2 -C /opt/toolchain/
+    
+    ls /opt/toolchain/
+    ```
+3. 安装相关工具
+    
+    ```
+    sudo apt-get install gawk
+    ```
+4. 下载地面 SDK
 
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+    4.1 国内用户推荐[码云-Gnd](https://gitee.com/flyiscool/Gnd) 下载 
+    
+    ```
+    mkdir -p ~/coolfly && cd coolfly
+    
+    git clone https://gitee.com/flyiscool/Gnd.git
+    
+    cd Gnd
+    ```
+    
+    4.2 国外用户推荐[Github Gnd](https://github.com/flyiscool/Gnd) 下载
+    
+    ```
+    mkdir -p ~/coolfly && cd coolfly
+    
+    git clone https://github.com/flyiscool/Gnd.git
+    
+    cd Gnd
+    ```
+    
+5. 编译使用
+    
+    ```
+    cd AR8020SDK/Application/
+    
+    make
+    ```
+    在 `AR8020SDK/Application/` 目录下会生成一个 `app.bin`， 在该目录下，使用指令 `make upload`， 连接 USB 即可上传到遥控器！
 
+> 注意： 切勿讲地面端程序烧录到天空端板子里面，也不可以将天空端程序烧录到地面端板子里面去！！！
+    
+## 二、目录介绍
 
-#### 码云特技
+### 2.1 目录结构
+```
+.
+├── AR8020SDK
+│   ├── Application
+│   ├── Build
+│   ├── Example
+│   ├── Inc
+│   ├── Lib
+│   └── Utility
+├── AR8020SDK_00.01.15
+│   ├── c201d
+│   └── Example
+└── Staging
+    ├── Inc
+    └── Lib
+```
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  码云官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解码云上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
-5.  码云官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+#### AR8020SDK
++ `Application`： 应用层代码，这个里面包含三个 CPU 的入口函数 `main` 以及上传的脚本文件;
++ `Build`: 编译配置文件，一般不需要进行更改；
++ `Example`： 示例文件，里面包含提供的示例代码，可作参考；
++ `Inc`： 头文件
++ `Lib`： 各个 CPU 依赖的已经编译好的库文件，一般无需更改；
++ `Utility`： 工具脚本，链接三个 CPU 以及配置文件，生成最终的 bin 文件；
+
+#### AR8020SDK_00.01.15
++ `c201d`： 板子名称，里面包含压缩包以及 md5 文件,`ground_app.bin`使我们提供的，可以直接烧录；
++ `Example`： 示例文件；

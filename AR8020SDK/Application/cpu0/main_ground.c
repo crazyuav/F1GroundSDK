@@ -128,14 +128,17 @@ static void USER_Define_EventHandler(void* p)
     HAL_GPIO_SetPin(USB_CTL_GPIO_NUM, HAL_GPIO_PIN_RESET);
 }
 
+
+// 地面端 8 个按键序列号
 uint8_t pinNo[8] = {81, 82, 83, 84, 85, 86, 87, 88};
 
-uint8_t pinValue[8] = {1, 1, 1, 1, 1, 1, 1, 1};
+// 是否按下去了
+uint8_t isPressed[8] = {false, false, false, false, false, false, false, false};
 
-uint16_t keyValue[8] = {0, 0, 0, 0, 0, 0, 0, 0};
+// 按下去次数计数
+uint8_t pressedCnt[8] = {0, 0, 0, 0, 0, 0, 0, 0};
 
-int8_t toggleCnt[8]= {0, 0, 0, 0, 0, 0, 0, 0};
-
+// 配置偏移量
 int16_t offsetValue[4]= {0, 0, 0, 0};
 
 
@@ -150,12 +153,11 @@ static void Usr_Usb_Debug(void const *argument)
     uint16_t right_h = 0;
     uint16_t right_v = 0;
 
-
     uint16_t channels[16] = {0};
 
     while(1)
     {
-        HAL_Delay(5);
+        HAL_Delay(5);   
 
         uint8_t i = 10;
 
@@ -168,39 +170,46 @@ static void Usr_Usb_Debug(void const *argument)
             right_v = (right_v + HAL_ADC_Read(5, 7)) >> 1;
         }
 
-        // 100 -900 对应范围值为 1024 - 2048  ((x - 100) / 800) * 1024
-
         left_h =  (left_h + offsetValue[0]) << 1;
         left_v =  (left_v + offsetValue[1]) << 1;
         right_h = (right_h + offsetValue[2]) << 1;
         right_v = (right_v + offsetValue[3]) << 1;
+        
+        // 按键1 用于解锁
+        if (isPressed[1] == false)
+        {   
+            channels[0] = left_h;
+            channels[1] = left_v;
+            channels[2] = right_h;
+            channels[3] = right_v;
+        }
+        else
+        {
+            channels[0] = 1900;
+            channels[1] = 1900;
+            channels[2] = 50;
+            channels[3] = 1900;
+        }
 
-        channels[0] = left_h;
-        channels[1] = left_v;
-        channels[2] = right_h;
-        channels[3] = right_v;
+        if (isPressed[2])
+        {
+            channels[0] = 50;
+            channels[1] = 1900;
+        }
 
-        channels[4] = keyValue[1];
-        channels[5] = keyValue[2];
-        channels[6] = keyValue[3];
-        channels[7] = keyValue[4];
-        channels[8] = keyValue[5];
-        channels[9] = keyValue[6];
-        channels[10] = keyValue[7];
+
+        channels[4] = UINT16_MAX;  
+        channels[5] = UINT16_MAX;
+        channels[6] = (pressedCnt[3] % 2 == 0) ? 1900 : 50;
+        channels[7] = (pressedCnt[4] % 2 == 0) ? 1900 : 50;
+        channels[8] = (pressedCnt[5] % 2 == 0) ? 1900 : 50;
+        channels[9] = (pressedCnt[6] % 2 == 0) ? 1900 : 50;
+        channels[10] = (pressedCnt[7] % 2 == 0) ? 1900 : 50;
         channels[11] = UINT16_MAX;
         channels[12] = UINT16_MAX;
         channels[13] = UINT16_MAX;
         channels[14] = UINT16_MAX;
         channels[15] = UINT16_MAX;
-
-        toggleCnt[1] = 0;
-        toggleCnt[2] = 0;
-        toggleCnt[3] = 0;
-        toggleCnt[4] = 0;
-        toggleCnt[5] = 0;
-        toggleCnt[6] = 0;
-        toggleCnt[7] = 0;
-    
 
         packet[0] = 0x0F; 
         // 16 channels of 11 bit data
@@ -235,80 +244,65 @@ static void Usr_Usb_Debug(void const *argument)
     }
 }
 
+// 按键0 用于校准
+static void handleKey0Value(void)
+{
+    uint32_t u32_Gpioval = 0;
+    HAL_GPIO_GetPin(HAL_GPIO_NUM81, &u32_Gpioval);
+
+    if(u32_Gpioval == 0)
+    {
+        offsetValue[0] = 0;
+        offsetValue[1] = 0;
+        offsetValue[2] = 0;                                                         
+        offsetValue[3] = 0;
+
+        uint8_t i = 10;
+        // 取值范围 
+        while (i--)
+        {
+            offsetValue[0] = (offsetValue[0] + HAL_ADC_Read(7, 8)) >> 1;
+            offsetValue[1] = (offsetValue[1] + HAL_ADC_Read(8, 6)) >> 1;
+            offsetValue[2] = (offsetValue[2] + HAL_ADC_Read(6, 5)) >> 1;
+            offsetValue[3] = (offsetValue[3] + HAL_ADC_Read(5, 7)) >> 1;
+        }
+
+        offsetValue[0] = 512 - offsetValue[0];
+        offsetValue[1] = 512 - offsetValue[1];
+        offsetValue[2] = 512 - offsetValue[2];
+        offsetValue[3] = 512 - offsetValue[3];
+    }
+}
+
+
 static void Key_Debug(void const *argument)
 {
+    uint32_t u32_Gpioval = 0;
 
     while (true)
-    {
-            uint32_t u32_Gpioval = 0;
-            HAL_GPIO_GetPin(HAL_GPIO_NUM81, &u32_Gpioval);
+    {   
+        handleKey0Value();
 
-            if(u32_Gpioval == 0)
+        for (size_t i = 1; i < sizeof(pinNo)/sizeof(pinNo[0]); i++)
+        {
+            u32_Gpioval = -1;
+
+            HAL_GPIO_GetPin(pinNo[i],&u32_Gpioval);
+
+            if (u32_Gpioval == 0 && isPressed[i] == false)
             {
-                offsetValue[0] = 0;
-                offsetValue[1] = 0;
-                offsetValue[2] = 0;
-                offsetValue[3] = 0;
-
-                uint8_t i = 10;
-
-                while (i--)
-                {
-                    offsetValue[0] = (offsetValue[0] + HAL_ADC_Read(7, 8)) >> 1;
-                    offsetValue[1] = (offsetValue[1] + HAL_ADC_Read(8, 6)) >> 1;
-                    offsetValue[2] = (offsetValue[2] + HAL_ADC_Read(6, 5)) >> 1;
-                    offsetValue[3] = (offsetValue[3] + HAL_ADC_Read(5, 7)) >> 1;
-                }
-
-                offsetValue[0] = 512 - offsetValue[0];
-                offsetValue[1] = 512 - offsetValue[1];
-                offsetValue[2] = 512 - offsetValue[2];
-                offsetValue[3] = 512 - offsetValue[3];
+                pressedCnt[i]++;
+                isPressed[i] = true;
             }
-
-            for (size_t i = 1; i < sizeof(pinNo)/sizeof(pinNo[0]); i++)
+            else if (u32_Gpioval != 0 && isPressed[i] == true)
             {
-                HAL_GPIO_GetPin(pinNo[i],&u32_Gpioval);
+                isPressed[i] = false;
+            }
+            else
+            {}
+        } 
 
-                if(u32_Gpioval == 0 && toggleCnt[i] == 0)
-                {                           
-                    toggleCnt[i] = 1;
-
-                    pinValue[i] += 1;
-
-                    if (pinValue[i] % 2 == 0)
-                    {
-                        keyValue[i] = 1900;
-                        pinValue[i] = 0;
-                    }
-                    else 
-                    {
-                        keyValue[i] = 50;
-                        pinValue[i] = 1;
-                    }
-                }
-
-                // if (pinValue[i] == 1)
-                // {
-                //     if(u32_Gpioval == 0)
-                //     {
-                //         ar_log("up");
-                //         keyValue[i] = 1000;
-                //         pinValue[i] = 0;
-                //     }
-                // }
-                // else 
-                // {
-                //     if(u32_Gpioval == 1)
-                //     {
-                //         ar_log("down");
-                //         keyValue[i] = 100;
-                //         pinValue[i] = 1;
-                //     }
-                // }                    
-            } 
-
-            HAL_Delay(50);
+        HAL_Delay(50);
     }
 }
 
