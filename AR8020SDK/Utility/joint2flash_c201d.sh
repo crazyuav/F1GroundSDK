@@ -15,14 +15,7 @@ Lib=../Application
 gndcpu0=$Lib/cpu0/ar8020_gndcpu0.bin
 gndcpu1=$Lib/cpu1/ar8020_gndcpu1.bin
 gndcpu2=$Lib/cpu2/ar8020_gndcpu2.bin
-outcfgbin=cfgdata.bin
-
-# 一下为 build 使用的
-# Lib=../../Output/Staging/Lib
-# gndcpu0=$Lib/ar8020_gndcpu0.bin
-# gndcpu1=$Lib/ar8020_gndcpu1.bin
-# gndcpu2=$Lib/ar8020_gndcpu2.bin
-# outcfgbin=cfgdata.bin
+outcfgbin=$Lib/cfgdata.bin
 
 echo "Making the image package, please wait ..."
 
