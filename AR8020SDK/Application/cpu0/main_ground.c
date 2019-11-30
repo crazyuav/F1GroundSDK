@@ -129,18 +129,27 @@ static void USER_Define_EventHandler(void* p)
 }
 
 
+
 // 地面端 8 个按键序列号
-uint8_t pinNo[8] = {81, 82, 83, 84, 85, 86, 87, 88};
+uint8_t pinNo[4] = {81, 82, 83, 84};
 
 // 是否按下去了
-uint8_t isPressed[8] = {false, false, false, false, false, false, false, false};
+uint8_t isPressed[4] = {false, false, false, false};
 
 // 按下去次数计数
-uint8_t pressedCnt[8] = {0, 0, 0, 0, 0, 0, 0, 0};
+uint8_t pressedCnt[4] = {0, 0, 0, 0};
 
 // 配置偏移量
 int16_t offsetValue[4]= {0, 0, 0, 0};
 
+// 拨档开关                    10   11 8 9    
+uint8_t gearSwitchPinNo[4] = {86, 87, 88, 85};
+
+// 拨档值
+uint8_t gearSwitchValue[4] = {0};
+
+// 三档开关
+uint8_t threeGearSwitch[3] = {0};
 
 static void Usr_Usb_Debug(void const *argument)
 {
@@ -152,6 +161,10 @@ static void Usr_Usb_Debug(void const *argument)
     uint16_t left_v = 0;
     uint16_t right_h = 0;
     uint16_t right_v = 0;
+
+    uint16_t leftGearSwitch = 0;
+    uint16_t midGearSwitch = 0;
+    uint16_t rightGearSwitch = 0;
 
     uint16_t channels[16] = {0};
 
@@ -169,6 +182,51 @@ static void Usr_Usb_Debug(void const *argument)
             right_h = (right_h + HAL_ADC_Read(6, 5)) >> 1;
             right_v = (right_v + HAL_ADC_Read(5, 7)) >> 1;
         }
+
+        leftGearSwitch = HAL_ADC_Read(3, 4);
+        
+        if(leftGearSwitch <= 333) 
+        {
+            leftGearSwitch = 50;
+        }
+        else if (leftGearSwitch <= 666) 
+        {
+            leftGearSwitch = 1024;
+        } 
+        else
+        {
+            leftGearSwitch = 1900;
+        }
+
+        midGearSwitch = HAL_ADC_Read(4, 9);
+        if(midGearSwitch <= 333) 
+        {
+            midGearSwitch = 50;
+        }
+        else if (midGearSwitch <= 666) 
+        {
+            midGearSwitch = 1024;
+        } 
+        else
+        {
+            midGearSwitch = 1900;
+        }
+
+        rightGearSwitch = HAL_ADC_Read(9, 3);
+
+        if(rightGearSwitch <= 333) 
+        {
+            rightGearSwitch = 50;
+        }
+        else if (rightGearSwitch <= 666) 
+        {
+            rightGearSwitch = 1024;
+        } 
+        else
+        {
+            rightGearSwitch = 1900;
+        }
+
 
         left_h =  (left_h + offsetValue[0]) << 1;
         left_v =  (left_v + offsetValue[1]) << 1;
@@ -198,20 +256,24 @@ static void Usr_Usb_Debug(void const *argument)
         }
 
 
-        channels[4] = UINT16_MAX;  
-        channels[5] = UINT16_MAX;
-        channels[6] = (pressedCnt[3] % 2 == 0) ? 1900 : 50;
-        channels[7] = (pressedCnt[4] % 2 == 0) ? 1900 : 50;
-        channels[8] = (pressedCnt[5] % 2 == 0) ? 1900 : 50;
-        channels[9] = (pressedCnt[6] % 2 == 0) ? 1900 : 50;
-        channels[10] = (pressedCnt[7] % 2 == 0) ? 1900 : 50;
-        channels[11] = UINT16_MAX;
+        channels[4] = gearSwitchValue[0] ? 1900 : 50;;  
+        channels[5] = gearSwitchValue[1] ? 1900 : 50;;
+        
+        channels[6] = gearSwitchValue[2] ? 1900 : 50;
+        channels[7] = gearSwitchValue[3] ? 1900 : 50;
+
+        channels[8] = (pressedCnt[3] % 2 == 0) ? 1900 : 50;
+        channels[9] = leftGearSwitch;
+        channels[10] = rightGearSwitch;
+        channels[11] = midGearSwitch;
         channels[12] = UINT16_MAX;
         channels[13] = UINT16_MAX;
         channels[14] = UINT16_MAX;
         channels[15] = UINT16_MAX;
 
         packet[0] = 0x0F; 
+
+
         // 16 channels of 11 bit data
         packet[1]  = (unsigned char) ((channels[0] & 0x07FF));
         packet[2]  = (unsigned char) ((channels[0] & 0x07FF)>>8   | (channels[1] & 0x07FF)<<3);
@@ -283,6 +345,7 @@ static void Key_Debug(void const *argument)
     {   
         handleKey0Value();
 
+        // 处理四个按键问题
         for (size_t i = 1; i < sizeof(pinNo)/sizeof(pinNo[0]); i++)
         {
             u32_Gpioval = -1;
@@ -300,6 +363,12 @@ static void Key_Debug(void const *argument)
             }
             else
             {}
+        }
+
+        for (uint8_t i = 0; i < sizeof(gearSwitchPinNo)/sizeof(gearSwitchPinNo[0]); i++)
+        {
+            HAL_GPIO_GetPin(gearSwitchPinNo[i], &u32_Gpioval);
+            gearSwitchValue[i] = u32_Gpioval;
         } 
 
         HAL_Delay(50);

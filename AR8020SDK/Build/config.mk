@@ -1,7 +1,7 @@
 
 include $(BUILD_DIR)/define.mk
 
-APPLICATION_DIR ?= $(TOP_DIR)/Application/C201d
+APPLICATION_DIR ?= $(TOP_DIR)/Application/SUB12
 NORFLASH_WPT_SRC_C := $(TOP_DIR)/Application/ConfigData/norflash_WPTable_4MB.c
 
 DEBUG ?= n

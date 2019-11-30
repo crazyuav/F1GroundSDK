@@ -330,6 +330,7 @@ STRU_FACTORY_SETTING st_Factory_EK_2t2r_cfg __attribute__ ((aligned (4)))=
                                             2447, 2451, 2455, 2463, 2467, 2471, 2475, 2419, 2423},
         },
 
+            
         //5.8G rc channel, max 40 channel
         .st_band1_10M_rcChNode = 
         {
