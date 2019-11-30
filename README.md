@@ -29,6 +29,9 @@
     
     ```
     sudo apt-get install gawk
+    sudo dpkg --add-architecture i386
+    sudo apt-get update
+    sudo apt-get install libc6:i386 libgcc1:i386 libstdc++5:i386 libstdc++6:i386
     ```
 4. 下载地面 SDK
 
