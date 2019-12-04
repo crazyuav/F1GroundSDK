@@ -317,27 +317,28 @@ typedef struct
 #define SRAM_DEBUG_LOG_OUTPUT_BUFFER_END_ADDR_2 (SRAM_DEBUG_LOG_OUTPUT_BUFFER_ST_ADDR_2 + 0xA00 - 1)
 
 
-
-
-
 //--------------------------------------------------------------------
 // flash  memory address space define here
 //--------------------------------------------------------------------
+
+#define NV_FLASH_RCVTCHIP_ADDR     (0x8000)
+#define NV_FLASH_RCVTCHIP_SIZE     (64)
+     
+#define NV_FLASH_ADDR1         NV_FLASH_RCVTCHIP_ADDR
+#define NV_FLASH_ADDR2         (NV_FLASH_ADDR1 + NV_FLASH_RCVTCHIP_SIZE)
+
 
 #define NV_FLASH_USR_SIZE     (64 * 1024)
 #define NV_FLASH_USR_ADDR2    (4* 1024 * 1024 - NV_FLASH_USR_SIZE)
 #define NV_FLASH_USR_ADDR1    (NV_FLASH_USR_ADDR2 - NV_FLASH_USR_SIZE)
 
 #define NV_FLASH_SIZE         (4 * 1024)
-#define NV_FLASH_ADDR2        (NV_FLASH_USR_ADDR1 - NV_FLASH_SIZE)
-#define NV_FLASH_ADDR1        (NV_FLASH_ADDR2 - NV_FLASH_SIZE)
-
+#define NV_FLASH_ADDR3        (NV_FLASH_USR_ADDR1 - NV_FLASH_SIZE)
+#define NV_FLASH_ADDR4        (NV_FLASH_ADDR3 - NV_FLASH_SIZE)
 
 #define NV_FLASH_FCT_SIZE       (32 * 1024)
-
-#define NV_FLASH_FCT_START_ADDR_0        (NV_FLASH_ADDR1 - NV_FLASH_FCT_SIZE)
-
-#define NV_FLASH_FCT_START_ADDR_1        (NV_FLASH_ADDR1 - NV_FLASH_FCT_SIZE / 2)
+#define NV_FLASH_FCT_START_ADDR_0        (NV_FLASH_ADDR4 - NV_FLASH_FCT_SIZE)
+#define NV_FLASH_FCT_START_ADDR_1        (NV_FLASH_ADDR4 - NV_FLASH_FCT_SIZE / 2)
 
 
 #ifdef __cplusplus
