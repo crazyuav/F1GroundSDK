@@ -1,0 +1,13 @@
+{
+    "board_id": 912,
+    "magic": "coolfly-f1",
+    "description": "Firmware for the coolfly board",
+    "image": "",
+    "build_time": 0,
+    "summary": "coolfly-f1",
+    "version": "0.1",
+    "image_size": 0,
+    "image_maxsize": 15728640,
+    "git_identity": "",
+    "board_revision": 0
+}

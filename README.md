@@ -84,7 +84,7 @@
 └── Staging
     ├── Inc
     └── Lib
-```
+```d
 
 #### AR8020SDK
 + `Application`： 应用层代码，这个里面包含三个 CPU 的入口函数 `main` 以及上传的脚本文件;

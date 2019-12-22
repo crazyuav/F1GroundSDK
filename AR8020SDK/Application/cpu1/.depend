@@ -1,0 +1,28 @@
+main.o: main.c ../../Inc/debuglog.h ../../Inc/sys_event.h \
+ ../../Inc/bb_types.h ../../Inc/hal.h ../../Inc/hal_ret_type.h \
+ ../../Inc/hal_sys_ctl.h ../../Inc/hal_uart.h ../../Inc/cmd_line.h \
+ ../../Inc/board_watchdog.h ../../Inc/hal_gpio.h ../../Inc/hal_timer.h
+command.o: command.c ../../Inc/debuglog.h ../../Inc/serial.h \
+ ../../Inc/cmsis_os.h ../../Inc/FreeRTOS.h \
+ ../../Inc/ar_freertos_specific.h ../../Inc/hal_ret_type.h \
+ ../../Inc/FreeRTOSConfig.h ../../Inc/debuglog.h ../../Inc/projdefs.h \
+ ../../Inc/portable.h ../../Inc/deprecated_definitions.h \
+ ../../Inc/portmacro.h ../../Inc/mpu_wrappers.h ../../Inc/task.h \
+ ../../Inc/list.h ../../Inc/timers.h ../../Inc/queue.h ../../Inc/semphr.h \
+ ../../Inc/event_groups.h ../../Inc/hal_sd.h ../../Inc/hal_ret_type.h \
+ ../../Inc/hal_nvic.h ../../Inc/cmd_line.h ../../Example/test_common.h
+test_bb.o: ../../Example/test_bb.c ../../Inc/debuglog.h \
+ ../../Inc/bb_types.h ../../Inc/hal_bb.h ../../Inc/bb_types.h \
+ ../../Inc/bb_uart_com.h ../../Inc/sys_event.h ../../Inc/bb_customerctx.h \
+ ../../Inc/boardParameters.h ../../Inc/hal_ret_type.h ../../Inc/bb_ctrl.h \
+ ../../Inc/hal_gpio.h ../../Inc/memory_config.h ../../Inc/hal_uart.h \
+ ../../Inc/serial.h
+test_common.o: ../../Example/test_common.c ../../Inc/debuglog.h \
+ ../../Example/auto_test.h ../../Inc/cpu_info.h ../../Inc/hal.h \
+ ../../Inc/hal_ret_type.h
+auto_test.o: ../../Example/auto_test.c ../../Inc/debuglog.h \
+ ../../Inc/systicks.h ../../Example/auto_test.h ../../Inc/hal.h \
+ ../../Inc/hal_ret_type.h
+norflash_WPTable_4MB.o: \
+ ../../Application/ConfigData/norflash_WPTable_4MB.c \
+ ../../Inc/data_type.h ../../Inc/nor_flash.h

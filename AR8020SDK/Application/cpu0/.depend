@@ -1,0 +1,467 @@
+main_ground.o: main_ground.c ../../Inc/debuglog.h \
+ ../../Example/test_i2c_adv7611.h ../../Inc/serial.h \
+ ../../Inc/hal_sram_ground.h ../../Inc/hal_ret_type.h \
+ ../../Inc/hal_usb_otg.h ../../Inc/cmsis_os.h ../../Inc/FreeRTOS.h \
+ ../../Inc/ar_freertos_specific.h ../../Inc/FreeRTOSConfig.h \
+ ../../Inc/debuglog.h ../../Inc/projdefs.h ../../Inc/portable.h \
+ ../../Inc/deprecated_definitions.h ../../Inc/portmacro.h \
+ ../../Inc/mpu_wrappers.h ../../Inc/task.h ../../Inc/list.h \
+ ../../Inc/timers.h ../../Inc/queue.h ../../Inc/semphr.h \
+ ../../Inc/event_groups.h ../../Inc/sys_event.h ../../Inc/bb_types.h \
+ ../../Inc/upgrade.h ../../Inc/hal.h ../../Inc/hal_bb.h \
+ ../../Inc/bb_uart_com.h ../../Inc/sys_event.h ../../Inc/bb_customerctx.h \
+ ../../Inc/boardParameters.h ../../Inc/bb_ctrl.h \
+ ../../Example/test_usbh.h ../../Inc/ff.h ../../Inc/integer.h \
+ ../../Inc/ffconf.h ../../Inc/ff_gen_drv.h ../../Inc/diskio.h \
+ ../../Inc/ff.h ../../Inc/usbh_diskio.h ../../Inc/hal_usb_host.h \
+ ../../Inc/hal_usb_device.h ../../Inc/hal_usb_otg.h \
+ ../../Inc/hal_sys_ctl.h ../../Inc/wireless_interface.h \
+ ../../Inc/upgrade.h ../../Inc/memory_config.h ../../Inc/hal_nv.h \
+ ../../Example/test_bb_led_ctrl.h ../../Inc/hal_uart.h \
+ ../../Inc/cmd_line.h ../../Inc/hal_sd.h ../../Example/uart_task.h \
+ ../../Example/bb_reply_pc.h ../../Example/usr_usb_task.h \
+ ../../Inc/hal_sram_sky.h ../../Example/usr_uart3_task.h \
+ ../../Inc/board_watchdog.h ../../Inc/hal_gpio.h \
+ ../../Example/app_sys_event_process.h ../../Example/test_search_id.h \
+ ../../Inc/hal_i2c.h ../../Inc/hal_mfi.h ../../Inc/hal_gpio.h \
+ ../../Inc/hal_mavlink.h ../../Inc/hal_adc.h ../../Inc/hal_timer.h
+grd_test_search_id.o: ../../Example/grd_test_search_id.c \
+ ../../Inc/debuglog.h ../../Inc/hal_ret_type.h ../../Inc/hal_timer.h \
+ ../../Inc/hal_nv.h ../../Inc/hal_ret_type.h ../../Inc/sys_event.h \
+ ../../Inc/bb_types.h ../../Inc/hal_bb.h ../../Inc/bb_uart_com.h \
+ ../../Inc/sys_event.h ../../Inc/bb_customerctx.h \
+ ../../Inc/boardParameters.h ../../Inc/bb_ctrl.h ../../Inc/data_type.h \
+ ../../Example/test_search_id.h
+grd_app_sys_event_process.o: ../../Example/grd_app_sys_event_process.c \
+ ../../Inc/debuglog.h ../../Inc/hal.h ../../Inc/hal_ret_type.h \
+ ../../Inc/systicks.h ../../Example/app_sys_event_process.h \
+ ../../Inc/wireless_interface.h ../../Inc/upgrade.h \
+ ../../Inc/memory_config.h ../../Example/test_search_id.h \
+ ../../Inc/bb_types.h ../../Inc/factory.h ../../Inc/bb_types.h \
+ ../../Inc/cfg_parser.h ../../Inc/hal_uart.h
+command.o: command.c ../../Inc/debuglog.h ../../Inc/cmsis_os.h \
+ ../../Inc/FreeRTOS.h ../../Inc/ar_freertos_specific.h \
+ ../../Inc/hal_ret_type.h ../../Inc/FreeRTOSConfig.h ../../Inc/debuglog.h \
+ ../../Inc/projdefs.h ../../Inc/portable.h \
+ ../../Inc/deprecated_definitions.h ../../Inc/portmacro.h \
+ ../../Inc/mpu_wrappers.h ../../Inc/task.h ../../Inc/list.h \
+ ../../Inc/timers.h ../../Inc/queue.h ../../Inc/semphr.h \
+ ../../Inc/event_groups.h ../../Example/test_i2c_adv7611.h \
+ ../../Example/test_hal_camera.h ../../Inc/hal_camera.h \
+ ../../Inc/hal_dma.h ../../Inc/memory_config.h ../../Inc/hal_ret_type.h \
+ ../../Example/test_hal_mipi.h ../../Example/test_usbh.h ../../Inc/ff.h \
+ ../../Inc/integer.h ../../Inc/ffconf.h ../../Inc/ff_gen_drv.h \
+ ../../Inc/diskio.h ../../Inc/ff.h ../../Inc/usbh_diskio.h \
+ ../../Inc/hal_usb_host.h ../../Inc/hal_usb_otg.h \
+ ../../Inc/hal_usb_device.h ../../Example/test_hal_nv.h \
+ ../../Inc/ar_freertos_specific.h ../../Example/test_bb.h \
+ ../../Example/test_common.h ../../Example/test_upgrade.h \
+ ../../Inc/upgrade.h ../../Inc/cmd_line.h ../../Example/test_memory.h \
+ ../../Example/test_sysevent.h ../../Example/test_hal_spi_flash.h \
+ ../../Example/test_hal_i2c_24c256.h ../../Example/test_hal_can.h \
+ ../../Example/test_hal_uart.h ../../Inc/hal_uart.h \
+ ../../Example/testhal_dma.h ../../Example/uvc_task.h \
+ ../../Example/test_bb_com.h ../../Example/testhal_timer.h \
+ ../../Example/testhal_pwm.h ../../Example/testhal_gpio.h \
+ ../../Example/test_sd.h ../../Inc/hal_sd.h ../../Example/test_dhcp.h \
+ ../../Example/test_udp_echo.h ../../Example/test_tcp_echo.h \
+ ../../Example/test_ping.h ../../Example/test_hal_spi.h \
+ ../../Inc/hal_spi.h ../../Inc/spi.h ../../Example/test_time_delay.h \
+ ../../Example/test_net_repeater_ground.h \
+ ../../Example/test_net_repeater_sky.h ../../Example/sleep_mode.h \
+ ../../Inc/factory.h ../../Inc/bb_types.h ../../Inc/cfg_parser.h \
+ ../../Inc/hal_uart.h ../../Example/test_hal_sram.h
+test_hal_camera.o: ../../Example/test_hal_camera.c ../../Inc/hal_camera.h \
+ ../../Inc/hal_ret_type.h ../../Example/test_hal_camera.h \
+ ../../Inc/debuglog.h ../../Example/test_hal_mipi.h
+test_hal_mipi.o: ../../Example/test_hal_mipi.c ../../Inc/debuglog.h \
+ ../../Inc/hal_mipi.h ../../Inc/hal_ret_type.h \
+ ../../Example/test_hal_mipi.h ../../Example/test_hal_camera.h \
+ ../../Inc/hal_camera.h
+test_usbh.o: ../../Example/test_usbh.c ../../Example/test_usbh.h \
+ ../../Inc/cmsis_os.h ../../Inc/FreeRTOS.h \
+ ../../Inc/ar_freertos_specific.h ../../Inc/hal_ret_type.h \
+ ../../Inc/FreeRTOSConfig.h ../../Inc/debuglog.h ../../Inc/projdefs.h \
+ ../../Inc/portable.h ../../Inc/deprecated_definitions.h \
+ ../../Inc/portmacro.h ../../Inc/mpu_wrappers.h ../../Inc/task.h \
+ ../../Inc/list.h ../../Inc/timers.h ../../Inc/queue.h ../../Inc/semphr.h \
+ ../../Inc/event_groups.h ../../Inc/ff.h ../../Inc/integer.h \
+ ../../Inc/ffconf.h ../../Inc/ff_gen_drv.h ../../Inc/diskio.h \
+ ../../Inc/ff.h ../../Inc/usbh_diskio.h ../../Inc/hal_usb_host.h \
+ ../../Inc/hal_usb_otg.h ../../Inc/hal_usb_device.h ../../Inc/debuglog.h \
+ ../../Inc/hal_sram_sky.h ../../Inc/hal.h ../../Inc/systicks.h \
+ ../../Example/auto_test.h
+test_bb.o: ../../Example/test_bb.c ../../Inc/debuglog.h \
+ ../../Inc/bb_types.h ../../Inc/hal_bb.h ../../Inc/bb_types.h \
+ ../../Inc/bb_uart_com.h ../../Inc/sys_event.h ../../Inc/bb_customerctx.h \
+ ../../Inc/boardParameters.h ../../Inc/hal_ret_type.h ../../Inc/bb_ctrl.h \
+ ../../Inc/hal_gpio.h ../../Inc/memory_config.h ../../Inc/hal_uart.h \
+ ../../Inc/serial.h
+test_hal_nv.o: ../../Example/test_hal_nv.c ../../Inc/debuglog.h \
+ ../../Inc/hal_nv.h ../../Inc/hal_ret_type.h ../../Example/test_hal_nv.h \
+ ../../Inc/hal_bb.h ../../Inc/bb_types.h ../../Inc/bb_uart_com.h \
+ ../../Inc/sys_event.h ../../Inc/bb_customerctx.h \
+ ../../Inc/boardParameters.h ../../Inc/bb_ctrl.h ../../Inc/nor_flash.h \
+ ../../Inc/memory_config.h ../../Inc/hal.h
+test_bb_led_ctrl.o: ../../Example/test_bb_led_ctrl.c \
+ ../../Inc/sys_event.h ../../Inc/bb_types.h ../../Inc/debuglog.h \
+ ../../Example/test_bb_led_ctrl.h ../../Inc/hal_gpio.h \
+ ../../Inc/hal_ret_type.h ../../Inc/memory_config.h
+test_hdmi.o: ../../Example/test_hdmi.c ../../Inc/debuglog.h \
+ ../../Inc/hal_hdmi_rx.h ../../Inc/hal_ret_type.h ../../Inc/hal_gpio.h \
+ ../../Inc/sys_event.h ../../Inc/bb_types.h
+test_upgrade.o: ../../Example/test_upgrade.c ../../Inc/upgrade.h \
+ ../../Inc/hal_bb.h ../../Inc/bb_types.h ../../Inc/bb_uart_com.h \
+ ../../Inc/sys_event.h ../../Inc/bb_customerctx.h \
+ ../../Inc/boardParameters.h ../../Inc/hal_ret_type.h ../../Inc/bb_ctrl.h \
+ ../../Inc/hal.h ../../Inc/debuglog.h ../../Inc/ff.h ../../Inc/integer.h \
+ ../../Inc/ffconf.h ../../Inc/md5.h ../../Inc/hal_usb_host.h \
+ ../../Inc/hal_usb_otg.h ../../Example/test_usbh.h ../../Inc/cmsis_os.h \
+ ../../Inc/FreeRTOS.h ../../Inc/ar_freertos_specific.h \
+ ../../Inc/FreeRTOSConfig.h ../../Inc/debuglog.h ../../Inc/projdefs.h \
+ ../../Inc/portable.h ../../Inc/deprecated_definitions.h \
+ ../../Inc/portmacro.h ../../Inc/mpu_wrappers.h ../../Inc/task.h \
+ ../../Inc/list.h ../../Inc/timers.h ../../Inc/queue.h ../../Inc/semphr.h \
+ ../../Inc/event_groups.h ../../Inc/ff_gen_drv.h ../../Inc/diskio.h \
+ ../../Inc/ff.h ../../Inc/usbh_diskio.h ../../Inc/hal_usb_device.h \
+ ../../Example/test_upgrade.h ../../Inc/nor_flash.h ../../Inc/efuse.h
+test_common.o: ../../Example/test_common.c ../../Inc/debuglog.h \
+ ../../Example/auto_test.h ../../Inc/cpu_info.h ../../Inc/hal.h \
+ ../../Inc/hal_ret_type.h
+test_memory.o: ../../Example/test_memory.c ../../Inc/debuglog.h \
+ ../../Inc/hal.h ../../Inc/hal_ret_type.h ../../Inc/cpu_info.h \
+ ../../Example/test_memory.h ../../Inc/memory.h ../../Inc/memory_itcm.h \
+ ../../Example/auto_test.h ../../Inc/systicks.h
+test_hal_spi_flash.o: ../../Example/test_hal_spi_flash.c \
+ ../../Inc/hal_spi.h ../../Inc/hal_ret_type.h ../../Inc/spi.h \
+ ../../Example/test_hal_spi_flash.h ../../Inc/debuglog.h ../../Inc/hal.h \
+ ../../Inc/systicks.h ../../Example/auto_test.h ../../Inc/hal_gpio.h \
+ ../../Inc/hal_norflash.h
+test_hal_can.o: ../../Example/test_hal_can.c ../../Inc/debuglog.h \
+ ../../Inc/hal_can.h ../../Inc/hal_ret_type.h \
+ ../../Example/test_hal_can.h ../../Inc/hal_nvic.h ../../Inc/hal_gpio.h
+testhal_timer.o: ../../Example/testhal_timer.c ../../Inc/debuglog.h \
+ ../../Inc/hal_ret_type.h ../../Inc/hal_timer.h \
+ ../../Example/testhal_timer.h ../../Example/auto_test.h \
+ ../../Inc/systicks.h
+testhal_pwm.o: ../../Example/testhal_pwm.c ../../Inc/debuglog.h \
+ ../../Inc/hal_ret_type.h ../../Inc/hal_pwm.h ../../Example/testhal_pwm.h
+testhal_gpio.o: ../../Example/testhal_gpio.c ../../Inc/debuglog.h \
+ ../../Inc/hal_ret_type.h ../../Inc/hal_gpio.h ../../Inc/hal_ret_type.h \
+ ../../Example/testhal_pwm.h ../../Example/auto_test.h \
+ ../../Inc/systicks.h
+test_hal_i2c_24c256.o: ../../Example/test_hal_i2c_24c256.c \
+ ../../Inc/hal_ret_type.h ../../Inc/hal_i2c.h ../../Inc/hal_ret_type.h \
+ ../../Example/test_hal_i2c_24c256.h ../../Inc/debuglog.h ../../Inc/hal.h \
+ ../../Inc/systicks.h ../../Example/auto_test.h
+test_hal_uart.o: ../../Example/test_hal_uart.c \
+ ../../Example/test_hal_uart.h ../../Inc/hal_uart.h \
+ ../../Inc/hal_ret_type.h ../../Inc/debuglog.h ../../Inc/hal_nvic.h \
+ ../../Inc/hal.h ../../Inc/cmsis_os.h ../../Inc/FreeRTOS.h \
+ ../../Inc/ar_freertos_specific.h ../../Inc/FreeRTOSConfig.h \
+ ../../Inc/debuglog.h ../../Inc/projdefs.h ../../Inc/portable.h \
+ ../../Inc/deprecated_definitions.h ../../Inc/portmacro.h \
+ ../../Inc/mpu_wrappers.h ../../Inc/task.h ../../Inc/list.h \
+ ../../Inc/timers.h ../../Inc/queue.h ../../Inc/semphr.h \
+ ../../Inc/event_groups.h ../../Inc/systicks.h ../../Example/auto_test.h \
+ ../../Inc/memory.h
+test_sysevent.o: ../../Example/test_sysevent.c ../../Inc/sys_event.h \
+ ../../Inc/bb_types.h ../../Example/test_sysevent.h ../../Inc/debuglog.h \
+ ../../Inc/cmsis_os.h ../../Inc/FreeRTOS.h \
+ ../../Inc/ar_freertos_specific.h ../../Inc/hal_ret_type.h \
+ ../../Inc/FreeRTOSConfig.h ../../Inc/debuglog.h ../../Inc/projdefs.h \
+ ../../Inc/portable.h ../../Inc/deprecated_definitions.h \
+ ../../Inc/portmacro.h ../../Inc/mpu_wrappers.h ../../Inc/task.h \
+ ../../Inc/list.h ../../Inc/timers.h ../../Inc/queue.h ../../Inc/semphr.h \
+ ../../Inc/event_groups.h ../../Inc/hal.h ../../Inc/cpu_info.h \
+ ../../Inc/systicks.h ../../Example/auto_test.h ../../Inc/data_type.h
+test_sysevent_performance.o: ../../Example/test_sysevent_performance.c \
+ ../../Inc/sys_event.h ../../Inc/bb_types.h \
+ ../../Example/test_sysevent_performance.h ../../Inc/debuglog.h \
+ ../../Inc/cpu_info.h ../../Inc/data_type.h
+test_hal_uart.o: ../../Example/test_hal_uart.c \
+ ../../Example/test_hal_uart.h ../../Inc/hal_uart.h \
+ ../../Inc/hal_ret_type.h ../../Inc/debuglog.h ../../Inc/hal_nvic.h \
+ ../../Inc/hal.h ../../Inc/cmsis_os.h ../../Inc/FreeRTOS.h \
+ ../../Inc/ar_freertos_specific.h ../../Inc/FreeRTOSConfig.h \
+ ../../Inc/debuglog.h ../../Inc/projdefs.h ../../Inc/portable.h \
+ ../../Inc/deprecated_definitions.h ../../Inc/portmacro.h \
+ ../../Inc/mpu_wrappers.h ../../Inc/task.h ../../Inc/list.h \
+ ../../Inc/timers.h ../../Inc/queue.h ../../Inc/semphr.h \
+ ../../Inc/event_groups.h ../../Inc/systicks.h ../../Example/auto_test.h \
+ ../../Inc/memory.h
+testhal_dma.o: ../../Example/testhal_dma.c ../../Inc/debuglog.h \
+ ../../Inc/hal_dma.h ../../Inc/hal_ret_type.h ../../Inc/md5.h \
+ ../../Inc/data_type.h ../../Inc/cmsis_os.h ../../Inc/FreeRTOS.h \
+ ../../Inc/ar_freertos_specific.h ../../Inc/FreeRTOSConfig.h \
+ ../../Inc/debuglog.h ../../Inc/projdefs.h ../../Inc/portable.h \
+ ../../Inc/deprecated_definitions.h ../../Inc/portmacro.h \
+ ../../Inc/mpu_wrappers.h ../../Inc/task.h ../../Inc/list.h \
+ ../../Inc/timers.h ../../Inc/queue.h ../../Inc/semphr.h \
+ ../../Inc/event_groups.h ../../Inc/systicks.h ../../Example/auto_test.h \
+ ../../Inc/hal.h ../../Inc/cpu_info.h ../../Inc/memory.h
+test_hal_can.o: ../../Example/test_hal_can.c ../../Inc/debuglog.h \
+ ../../Inc/hal_can.h ../../Inc/hal_ret_type.h \
+ ../../Example/test_hal_can.h ../../Inc/hal_nvic.h ../../Inc/hal_gpio.h
+auto_test.o: ../../Example/auto_test.c ../../Inc/debuglog.h \
+ ../../Inc/systicks.h ../../Example/auto_test.h ../../Inc/hal.h \
+ ../../Inc/hal_ret_type.h
+uvc_task.o: ../../Example/uvc_task.c ../../Example/uvc_task.h \
+ ../../Inc/hal_usb_host.h ../../Inc/hal_ret_type.h \
+ ../../Inc/hal_usb_otg.h ../../Example/test_usbh.h ../../Inc/cmsis_os.h \
+ ../../Inc/FreeRTOS.h ../../Inc/ar_freertos_specific.h \
+ ../../Inc/FreeRTOSConfig.h ../../Inc/debuglog.h ../../Inc/projdefs.h \
+ ../../Inc/portable.h ../../Inc/deprecated_definitions.h \
+ ../../Inc/portmacro.h ../../Inc/mpu_wrappers.h ../../Inc/task.h \
+ ../../Inc/list.h ../../Inc/timers.h ../../Inc/queue.h ../../Inc/semphr.h \
+ ../../Inc/event_groups.h ../../Inc/ff.h ../../Inc/integer.h \
+ ../../Inc/ffconf.h ../../Inc/ff_gen_drv.h ../../Inc/diskio.h \
+ ../../Inc/ff.h ../../Inc/usbh_diskio.h ../../Inc/hal_usb_device.h \
+ ../../Inc/hal_sram_sky.h ../../Inc/debuglog.h ../../Inc/hal.h \
+ ../../Inc/memory.h
+test_bb_com.o: ../../Example/test_bb_com.c ../../Example/test_bb_com.h \
+ ../../Inc/debuglog.h ../../Inc/hal.h ../../Inc/hal_ret_type.h \
+ ../../Inc/hal_bb.h ../../Inc/bb_types.h ../../Inc/bb_uart_com.h \
+ ../../Inc/sys_event.h ../../Inc/bb_customerctx.h \
+ ../../Inc/boardParameters.h ../../Inc/bb_ctrl.h ../../Inc/hal_gpio.h \
+ ../../Inc/memory_config.h ../../Inc/cmsis_os.h ../../Inc/FreeRTOS.h \
+ ../../Inc/ar_freertos_specific.h ../../Inc/FreeRTOSConfig.h \
+ ../../Inc/debuglog.h ../../Inc/projdefs.h ../../Inc/portable.h \
+ ../../Inc/deprecated_definitions.h ../../Inc/portmacro.h \
+ ../../Inc/mpu_wrappers.h ../../Inc/task.h ../../Inc/list.h \
+ ../../Inc/timers.h ../../Inc/queue.h ../../Inc/semphr.h \
+ ../../Inc/event_groups.h ../../Inc/systicks.h ../../Inc/hal_nvic.h \
+ ../../Inc/board_watchdog.h ../../Inc/hal_gpio.h
+test_sd.o: ../../Example/test_sd.c ../../Inc/debuglog.h \
+ ../../Example/test_sd.h ../../Inc/ff.h ../../Inc/integer.h \
+ ../../Inc/ffconf.h ../../Inc/ff_gen_drv.h ../../Inc/diskio.h \
+ ../../Inc/ff.h ../../Inc/hal_sd.h ../../Inc/hal_ret_type.h \
+ ../../Inc/cpu_info.h ../../Inc/cmsis_os.h ../../Inc/FreeRTOS.h \
+ ../../Inc/ar_freertos_specific.h ../../Inc/FreeRTOSConfig.h \
+ ../../Inc/debuglog.h ../../Inc/projdefs.h ../../Inc/portable.h \
+ ../../Inc/deprecated_definitions.h ../../Inc/portmacro.h \
+ ../../Inc/mpu_wrappers.h ../../Inc/task.h ../../Inc/list.h \
+ ../../Inc/timers.h ../../Inc/queue.h ../../Inc/semphr.h \
+ ../../Inc/event_groups.h ../../Inc/hal.h ../../Inc/systicks.h \
+ ../../Example/auto_test.h ../../Inc/memory.h
+test_udp_echo.o: ../../Example/test_udp_echo.c ../../Inc/lwip/opt.h \
+ ../../Inc/lwipopts.h ../../Inc/lwip/debug.h ../../Inc/lwip/arch.h \
+ ../../Inc/arch/cc.h ../../Inc/arch/sys_arch.h ../../Inc/cmsis_os.h \
+ ../../Inc/FreeRTOS.h ../../Inc/ar_freertos_specific.h \
+ ../../Inc/hal_ret_type.h ../../Inc/FreeRTOSConfig.h ../../Inc/debuglog.h \
+ ../../Inc/projdefs.h ../../Inc/portable.h \
+ ../../Inc/deprecated_definitions.h ../../Inc/portmacro.h \
+ ../../Inc/mpu_wrappers.h ../../Inc/task.h ../../Inc/list.h \
+ ../../Inc/timers.h ../../Inc/queue.h ../../Inc/semphr.h \
+ ../../Inc/event_groups.h ../../Inc/FreeRTOS.h ../../Inc/task.h \
+ ../../Inc/queue.h ../../Inc/semphr.h ../../Inc/debuglog.h \
+ ../../Inc/lwip/mem.h ../../Inc/memory.h ../../Inc/lwip/raw.h \
+ ../../Inc/lwip/pbuf.h ../../Inc/lwip/err.h ../../Inc/lwip/def.h \
+ ../../Inc/lwip/ip.h ../../Inc/lwip/ip_addr.h ../../Inc/lwip/netif.h \
+ ../../Inc/lwip/icmp.h ../../Inc/lwip/dhcp.h ../../Inc/lwip/udp.h \
+ ../../Inc/lwip/netbuf.h ../../Inc/lwip/sys.h ../../Inc/arch/sys_arch.h \
+ ../../Inc/lwip/inet_chksum.h ../../Inc/lwip/init.h \
+ ../../Inc/netif/etharp.h ../../Inc/lwip/tcpip.h ../../Inc/lwip/api_msg.h \
+ ../../Inc/lwip/igmp.h ../../Inc/lwip/api.h ../../Inc/lwip/netifapi.h \
+ ../../Inc/lwip/lwip_timers.h ../../Inc/lwip/sockets.h \
+ ../../Inc/lwip/inet.h ../../Inc/hal_usb_host.h ../../Inc/hal_usb_otg.h \
+ ../../Inc/hal.h ../../Example/test_udp_echo.h
+test_tcp_echo.o: ../../Example/test_tcp_echo.c ../../Inc/lwip/opt.h \
+ ../../Inc/lwipopts.h ../../Inc/lwip/debug.h ../../Inc/lwip/arch.h \
+ ../../Inc/arch/cc.h ../../Inc/arch/sys_arch.h ../../Inc/cmsis_os.h \
+ ../../Inc/FreeRTOS.h ../../Inc/ar_freertos_specific.h \
+ ../../Inc/hal_ret_type.h ../../Inc/FreeRTOSConfig.h ../../Inc/debuglog.h \
+ ../../Inc/projdefs.h ../../Inc/portable.h \
+ ../../Inc/deprecated_definitions.h ../../Inc/portmacro.h \
+ ../../Inc/mpu_wrappers.h ../../Inc/task.h ../../Inc/list.h \
+ ../../Inc/timers.h ../../Inc/queue.h ../../Inc/semphr.h \
+ ../../Inc/event_groups.h ../../Inc/FreeRTOS.h ../../Inc/task.h \
+ ../../Inc/queue.h ../../Inc/semphr.h ../../Inc/debuglog.h \
+ ../../Inc/lwip/mem.h ../../Inc/memory.h ../../Inc/lwip/raw.h \
+ ../../Inc/lwip/pbuf.h ../../Inc/lwip/err.h ../../Inc/lwip/def.h \
+ ../../Inc/lwip/ip.h ../../Inc/lwip/ip_addr.h ../../Inc/lwip/netif.h \
+ ../../Inc/lwip/icmp.h ../../Inc/lwip/dhcp.h ../../Inc/lwip/udp.h \
+ ../../Inc/lwip/netbuf.h ../../Inc/lwip/sys.h ../../Inc/arch/sys_arch.h \
+ ../../Inc/lwip/inet_chksum.h ../../Inc/lwip/init.h \
+ ../../Inc/netif/etharp.h ../../Inc/lwip/tcpip.h ../../Inc/lwip/api_msg.h \
+ ../../Inc/lwip/igmp.h ../../Inc/lwip/api.h ../../Inc/lwip/netifapi.h \
+ ../../Inc/lwip/lwip_timers.h ../../Inc/lwip/sockets.h \
+ ../../Inc/lwip/inet.h ../../Inc/hal_usb_host.h ../../Inc/hal_usb_otg.h \
+ ../../Inc/hal.h ../../Example/test_tcp_echo.h
+test_dhcp.o: ../../Example/test_dhcp.c ../../Inc/lwip/opt.h \
+ ../../Inc/lwipopts.h ../../Inc/lwip/debug.h ../../Inc/lwip/arch.h \
+ ../../Inc/arch/cc.h ../../Inc/arch/sys_arch.h ../../Inc/cmsis_os.h \
+ ../../Inc/FreeRTOS.h ../../Inc/ar_freertos_specific.h \
+ ../../Inc/hal_ret_type.h ../../Inc/FreeRTOSConfig.h ../../Inc/debuglog.h \
+ ../../Inc/projdefs.h ../../Inc/portable.h \
+ ../../Inc/deprecated_definitions.h ../../Inc/portmacro.h \
+ ../../Inc/mpu_wrappers.h ../../Inc/task.h ../../Inc/list.h \
+ ../../Inc/timers.h ../../Inc/queue.h ../../Inc/semphr.h \
+ ../../Inc/event_groups.h ../../Inc/FreeRTOS.h ../../Inc/task.h \
+ ../../Inc/queue.h ../../Inc/semphr.h ../../Inc/debuglog.h \
+ ../../Inc/lwip/mem.h ../../Inc/memory.h ../../Inc/lwip/raw.h \
+ ../../Inc/lwip/pbuf.h ../../Inc/lwip/err.h ../../Inc/lwip/def.h \
+ ../../Inc/lwip/ip.h ../../Inc/lwip/ip_addr.h ../../Inc/lwip/netif.h \
+ ../../Inc/lwip/icmp.h ../../Inc/lwip/dhcp.h ../../Inc/lwip/udp.h \
+ ../../Inc/lwip/netbuf.h ../../Inc/lwip/sys.h ../../Inc/arch/sys_arch.h \
+ ../../Inc/lwip/inet_chksum.h ../../Inc/lwip/init.h \
+ ../../Inc/netif/etharp.h ../../Inc/lwip/tcpip.h ../../Inc/lwip/api_msg.h \
+ ../../Inc/lwip/igmp.h ../../Inc/lwip/api.h ../../Inc/lwip/netifapi.h \
+ ../../Inc/lwip/lwip_timers.h ../../Inc/lwip/sockets.h \
+ ../../Inc/lwip/inet.h ../../Inc/hal_usb_host.h ../../Inc/hal_usb_otg.h \
+ ../../Inc/hal.h ../../Example/test_dhcp.h
+test_ping.o: ../../Example/test_ping.c ../../Inc/lwip/opt.h \
+ ../../Inc/lwipopts.h ../../Inc/lwip/debug.h ../../Inc/lwip/arch.h \
+ ../../Inc/arch/cc.h ../../Inc/arch/sys_arch.h ../../Inc/cmsis_os.h \
+ ../../Inc/FreeRTOS.h ../../Inc/ar_freertos_specific.h \
+ ../../Inc/hal_ret_type.h ../../Inc/FreeRTOSConfig.h ../../Inc/debuglog.h \
+ ../../Inc/projdefs.h ../../Inc/portable.h \
+ ../../Inc/deprecated_definitions.h ../../Inc/portmacro.h \
+ ../../Inc/mpu_wrappers.h ../../Inc/task.h ../../Inc/list.h \
+ ../../Inc/timers.h ../../Inc/queue.h ../../Inc/semphr.h \
+ ../../Inc/event_groups.h ../../Inc/FreeRTOS.h ../../Inc/task.h \
+ ../../Inc/queue.h ../../Inc/semphr.h ../../Inc/debuglog.h \
+ ../../Inc/lwip/mem.h ../../Inc/memory.h ../../Inc/lwip/raw.h \
+ ../../Inc/lwip/pbuf.h ../../Inc/lwip/err.h ../../Inc/lwip/def.h \
+ ../../Inc/lwip/ip.h ../../Inc/lwip/ip_addr.h ../../Inc/lwip/netif.h \
+ ../../Inc/lwip/icmp.h ../../Inc/lwip/dhcp.h ../../Inc/lwip/udp.h \
+ ../../Inc/lwip/netbuf.h ../../Inc/lwip/sys.h ../../Inc/arch/sys_arch.h \
+ ../../Inc/lwip/inet_chksum.h ../../Inc/lwip/init.h \
+ ../../Inc/netif/etharp.h ../../Inc/lwip/tcpip.h ../../Inc/lwip/api_msg.h \
+ ../../Inc/lwip/igmp.h ../../Inc/lwip/api.h ../../Inc/lwip/netifapi.h \
+ ../../Inc/lwip/lwip_timers.h ../../Inc/lwip/sockets.h \
+ ../../Inc/lwip/inet.h ../../Inc/hal_usb_host.h ../../Inc/hal_usb_otg.h \
+ ../../Inc/hal.h ../../Example/test_ping.h
+test_net_repeater_sky.o: ../../Example/test_net_repeater_sky.c \
+ ../../Inc/debuglog.h ../../Inc/hal_bb.h ../../Inc/bb_types.h \
+ ../../Inc/bb_uart_com.h ../../Inc/sys_event.h ../../Inc/bb_customerctx.h \
+ ../../Inc/boardParameters.h ../../Inc/hal_ret_type.h ../../Inc/bb_ctrl.h \
+ ../../Inc/hal_gpio.h ../../Inc/memory_config.h ../../Inc/cmsis_os.h \
+ ../../Inc/FreeRTOS.h ../../Inc/ar_freertos_specific.h \
+ ../../Inc/FreeRTOSConfig.h ../../Inc/debuglog.h ../../Inc/projdefs.h \
+ ../../Inc/portable.h ../../Inc/deprecated_definitions.h \
+ ../../Inc/portmacro.h ../../Inc/mpu_wrappers.h ../../Inc/task.h \
+ ../../Inc/list.h ../../Inc/timers.h ../../Inc/queue.h ../../Inc/semphr.h \
+ ../../Inc/event_groups.h ../../Inc/hal_usb_host.h \
+ ../../Inc/hal_usb_otg.h ../../Inc/hal.h \
+ ../../Example/test_net_repeater_sky.h ../../Inc/hal_sram_sky.h
+test_net_repeater_ground.o: ../../Example/test_net_repeater_ground.c \
+ ../../Inc/debuglog.h ../../Inc/hal_bb.h ../../Inc/bb_types.h \
+ ../../Inc/bb_uart_com.h ../../Inc/sys_event.h ../../Inc/bb_customerctx.h \
+ ../../Inc/boardParameters.h ../../Inc/hal_ret_type.h ../../Inc/bb_ctrl.h \
+ ../../Inc/hal_gpio.h ../../Inc/memory_config.h ../../Inc/cmsis_os.h \
+ ../../Inc/FreeRTOS.h ../../Inc/ar_freertos_specific.h \
+ ../../Inc/FreeRTOSConfig.h ../../Inc/debuglog.h ../../Inc/projdefs.h \
+ ../../Inc/portable.h ../../Inc/deprecated_definitions.h \
+ ../../Inc/portmacro.h ../../Inc/mpu_wrappers.h ../../Inc/task.h \
+ ../../Inc/list.h ../../Inc/timers.h ../../Inc/queue.h ../../Inc/semphr.h \
+ ../../Inc/event_groups.h ../../Inc/hal_usb_host.h \
+ ../../Inc/hal_usb_otg.h ../../Inc/hal.h \
+ ../../Example/test_net_repeater_ground.h ../../Inc/hal_sram_ground.h \
+ ../../Inc/memory.h
+test_hal_spi.o: ../../Example/test_hal_spi.c ../../Example/test_hal_spi.h \
+ ../../Inc/hal_spi.h ../../Inc/hal_ret_type.h ../../Inc/spi.h \
+ ../../Inc/debuglog.h ../../Inc/hal_gpio.h
+bb_reply_pc.o: ../../Example/bb_reply_pc.c ../../Example/bb_reply_pc.h \
+ ../../Inc/hal_usb_host.h ../../Inc/hal_ret_type.h \
+ ../../Inc/hal_usb_otg.h ../../Inc/hal_usb_device.h ../../Inc/debuglog.h \
+ ../../Inc/hal.h ../../Inc/bb_types.h
+sleep_mode.o: ../../Example/sleep_mode.c ../../Inc/debuglog.h \
+ ../../Inc/hal.h ../../Inc/hal_ret_type.h ../../Example/sleep_mode.h \
+ ../../Inc/hal_bb.h ../../Inc/bb_types.h ../../Inc/bb_uart_com.h \
+ ../../Inc/sys_event.h ../../Inc/bb_customerctx.h \
+ ../../Inc/boardParameters.h ../../Inc/bb_ctrl.h ../../Inc/hal_gpio.h
+c201d_pt.o: ../../Example/c201d_pt.c ../../Inc/debuglog.h \
+ ../../Inc/hal_gpio.h ../../Inc/hal_ret_type.h ../../Inc/systicks.h \
+ ../../Inc/hal_spi.h ../../Inc/spi.h ../../Inc/hal_adc.h \
+ ../../Inc/hal_pwm.h ../../Example/c201d_pt.h ../../Inc/hal.h \
+ ../../Inc/hal_uart.h ../../Inc/hal_i2c.h ../../Inc/cmsis_os.h \
+ ../../Inc/FreeRTOS.h ../../Inc/ar_freertos_specific.h \
+ ../../Inc/FreeRTOSConfig.h ../../Inc/debuglog.h ../../Inc/projdefs.h \
+ ../../Inc/portable.h ../../Inc/deprecated_definitions.h \
+ ../../Inc/portmacro.h ../../Inc/mpu_wrappers.h ../../Inc/task.h \
+ ../../Inc/list.h ../../Inc/timers.h ../../Inc/queue.h ../../Inc/semphr.h \
+ ../../Inc/event_groups.h
+usr_upgrade.o: ../../Example/usr_upgrade.c ../../Example/usr_upgrade.h
+usr_protocol.o: ../../Example/usr_protocol.c ../../Inc/hal_usb_device.h \
+ ../../Inc/hal_ret_type.h ../../Inc/hal_usb_otg.h ../../Inc/debuglog.h \
+ ../../Inc/hal.h ../../Inc/hal_bb.h ../../Inc/bb_types.h \
+ ../../Inc/bb_uart_com.h ../../Inc/sys_event.h ../../Inc/bb_customerctx.h \
+ ../../Inc/boardParameters.h ../../Inc/bb_ctrl.h \
+ ../../Example/usr_wir_core.h ../../Example/usr_upgrade.h \
+ ../../Example/test_bb_sigQuality.h ../../Example/test_bb_led_ctrl.h \
+ ../../Example/usr_protocol.h ../../Example/usr_usb_task.h \
+ ../../Inc/hal_sram_sky.h ../../Example/c201d_pt.h \
+ ../../Example/usr_uart3_task.h ../../Inc/hal_sram_ground.h
+usr_wir_core.o: ../../Example/usr_wir_core.c ../../Example/usr_wir_core.h \
+ ../../Inc/hal_bb.h ../../Inc/bb_types.h ../../Inc/bb_uart_com.h \
+ ../../Inc/sys_event.h ../../Inc/bb_customerctx.h \
+ ../../Inc/boardParameters.h ../../Inc/hal_ret_type.h ../../Inc/bb_ctrl.h \
+ ../../Inc/debuglog.h ../../Inc/bb_types.h ../../Inc/wireless_interface.h \
+ ../../Inc/upgrade.h ../../Inc/memory_config.h
+test_hal_sram.o: ../../Example/test_hal_sram.c ../../Inc/debuglog.h \
+ ../../Inc/hal_sram_ground.h ../../Inc/hal_ret_type.h \
+ ../../Inc/hal_usb_otg.h
+test_hal_spi_flash.o: ../../Example/test_hal_spi_flash.c \
+ ../../Inc/hal_spi.h ../../Inc/hal_ret_type.h ../../Inc/spi.h \
+ ../../Example/test_hal_spi_flash.h ../../Inc/debuglog.h ../../Inc/hal.h \
+ ../../Inc/systicks.h ../../Example/auto_test.h ../../Inc/hal_gpio.h \
+ ../../Inc/hal_norflash.h
+usr_usb_task.o: ../../Example/usr_usb_task.c ../../Inc/sys_event.h \
+ ../../Inc/bb_types.h ../../Inc/debuglog.h ../../Inc/hal_usb_device.h \
+ ../../Inc/hal_ret_type.h ../../Inc/hal_usb_otg.h ../../Inc/systicks.h \
+ ../../Example/usr_usb_task.h ../../Inc/hal_sram_sky.h ../../Inc/hal.h \
+ ../../Inc/hal_bb.h ../../Inc/bb_uart_com.h ../../Inc/sys_event.h \
+ ../../Inc/bb_customerctx.h ../../Inc/boardParameters.h \
+ ../../Inc/bb_ctrl.h ../../Inc/cmsis_os.h ../../Inc/FreeRTOS.h \
+ ../../Inc/ar_freertos_specific.h ../../Inc/FreeRTOSConfig.h \
+ ../../Inc/debuglog.h ../../Inc/projdefs.h ../../Inc/portable.h \
+ ../../Inc/deprecated_definitions.h ../../Inc/portmacro.h \
+ ../../Inc/mpu_wrappers.h ../../Inc/task.h ../../Inc/list.h \
+ ../../Inc/timers.h ../../Inc/queue.h ../../Inc/semphr.h \
+ ../../Inc/event_groups.h ../../Example/usr_wir_core.h \
+ ../../Example/usr_protocol.h ../../Inc/wireless_interface.h \
+ ../../Inc/upgrade.h ../../Inc/memory_config.h ../../Inc/hal_sys_ctl.h \
+ ../../Example/usr_sbus_uart_task.h
+ringbuf.o: ../../Example/ringbuf.c ../../Example/ringbuf.h \
+ ../../Inc/debuglog.h ../../Inc/memory.h
+test_bb_sigQuality.o: ../../Example/test_bb_sigQuality.c \
+ ../../Inc/debuglog.h ../../Inc/hal_ret_type.h ../../Inc/hal_bb.h \
+ ../../Inc/bb_types.h ../../Inc/bb_uart_com.h ../../Inc/sys_event.h \
+ ../../Inc/bb_customerctx.h ../../Inc/boardParameters.h \
+ ../../Inc/hal_ret_type.h ../../Inc/bb_ctrl.h \
+ ../../Example/test_bb_sigQuality.h
+usr_sbus_uart_task.o: ../../Example/usr_sbus_uart_task.c \
+ ../../Inc/cmsis_os.h ../../Inc/FreeRTOS.h \
+ ../../Inc/ar_freertos_specific.h ../../Inc/hal_ret_type.h \
+ ../../Inc/FreeRTOSConfig.h ../../Inc/debuglog.h ../../Inc/projdefs.h \
+ ../../Inc/portable.h ../../Inc/deprecated_definitions.h \
+ ../../Inc/portmacro.h ../../Inc/mpu_wrappers.h ../../Inc/task.h \
+ ../../Inc/list.h ../../Inc/timers.h ../../Inc/queue.h ../../Inc/semphr.h \
+ ../../Inc/event_groups.h ../../Inc/hal_nvic.h ../../Inc/hal_bb.h \
+ ../../Inc/bb_types.h ../../Inc/bb_uart_com.h ../../Inc/sys_event.h \
+ ../../Inc/bb_customerctx.h ../../Inc/boardParameters.h \
+ ../../Inc/bb_ctrl.h ../../Inc/hal_uart.h ../../Inc/debuglog.h \
+ ../../Inc/systicks.h ../../Inc/hal.h ../../Example/ringbuf.h \
+ ../../Inc/hal_gpio.h ../../Inc/interrupt.h ../../Inc/ar8020.h \
+ ../../Inc/core_cm7.h ../../Inc/core_cmInstr.h ../../Inc/core_cmFunc.h \
+ ../../Inc/core_cmSimd.h ../../Inc/ar8020.h ../../Inc/hal_timer.h \
+ ../../Inc/memory_config.h ../../Inc/factory.h ../../Inc/cfg_parser.h \
+ ../../Inc/hal_uart.h ../../Inc/board_watchdog.h ../../Inc/hal_gpio.h
+usr_uart3_task.o: ../../Example/usr_uart3_task.c ../../Inc/cmsis_os.h \
+ ../../Inc/FreeRTOS.h ../../Inc/ar_freertos_specific.h \
+ ../../Inc/hal_ret_type.h ../../Inc/FreeRTOSConfig.h ../../Inc/debuglog.h \
+ ../../Inc/projdefs.h ../../Inc/portable.h \
+ ../../Inc/deprecated_definitions.h ../../Inc/portmacro.h \
+ ../../Inc/mpu_wrappers.h ../../Inc/task.h ../../Inc/list.h \
+ ../../Inc/timers.h ../../Inc/queue.h ../../Inc/semphr.h \
+ ../../Inc/event_groups.h ../../Inc/hal_nvic.h ../../Inc/hal_bb.h \
+ ../../Inc/bb_types.h ../../Inc/bb_uart_com.h ../../Inc/sys_event.h \
+ ../../Inc/bb_customerctx.h ../../Inc/boardParameters.h \
+ ../../Inc/bb_ctrl.h ../../Inc/hal_uart.h ../../Inc/debuglog.h \
+ ../../Inc/systicks.h ../../Inc/hal.h ../../Inc/factory.h \
+ ../../Inc/cfg_parser.h ../../Inc/hal_uart.h \
+ ../../Example/usr_sbus_uart_task.h ../../Example/ringbuf.h
+norflash_WPTable_4MB.o: \
+ ../../Application/ConfigData/norflash_WPTable_4MB.c \
+ ../../Inc/data_type.h ../../Inc/nor_flash.h
