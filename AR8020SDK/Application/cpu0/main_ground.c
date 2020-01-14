@@ -151,6 +151,25 @@ uint8_t gearSwitchValue[4] = {0};
 // 三档开关
 uint8_t threeGearSwitch[3] = {0};
 
+
+
+static uint16_t switch_limiting(uint16_t ivalue)
+{
+    if((2047 < ivalue) && (ivalue < 4096))
+    {
+        return 2047;
+    }else if(60000 < ivalue)
+    {
+        return 0;
+    }
+    else
+    {
+        return ivalue;
+    }
+    
+}
+
+
 static void Usr_Usb_Debug(void const *argument)
 {
     HAL_Delay(1000);
@@ -233,6 +252,12 @@ static void Usr_Usb_Debug(void const *argument)
         right_h = (right_h + offsetValue[2]) << 1;
         right_v = (right_v + offsetValue[3]) << 1;
         
+        
+        left_h = switch_limiting(left_h);
+        left_v = switch_limiting(left_v);
+        right_h = switch_limiting(right_h);
+        right_v = switch_limiting(right_v);
+
         // 按键1 用于解锁
         if (isPressed[1] == false)
         {   
@@ -270,6 +295,21 @@ static void Usr_Usb_Debug(void const *argument)
         channels[13] = UINT16_MAX;
         channels[14] = UINT16_MAX;
         channels[15] = UINT16_MAX;
+
+        // DLOG_Critical("ch0~ch7: %04d %04d %04d %04d %04d %04d %04d %04d ",
+        //         channels[0],channels[1],channels[2],channels[3],
+        //         channels[4],channels[5],channels[6],channels[7]);
+
+        // DLOG_Critical("ch0~ch3: %04d %04d %04d %04d \n",
+        //             channels[0],channels[1],channels[2],channels[3]);
+
+        // DLOG_Critical("ch4~ch7: %04d %04d %04d %04d \n",
+        //             channels[4],channels[5],channels[6],channels[7]);
+
+        // DLOG_Critical("ch8~ch15: %04d %04d %04d %04d %04d %04d %04d %04d \n",
+        //         channels[8],channels[9],channels[10],channels[11],
+        //         channels[12],channels[13],channels[14],channels[15]);
+
 
         packet[0] = 0x0F; 
 
@@ -329,10 +369,10 @@ static void handleKey0Value(void)
             offsetValue[3] = (offsetValue[3] + HAL_ADC_Read(5, 7)) >> 1;
         }
 
-        offsetValue[0] = 512 - offsetValue[0];
-        offsetValue[1] = 512 - offsetValue[1];
-        offsetValue[2] = 512 - offsetValue[2];
-        offsetValue[3] = 512 - offsetValue[3];
+        offsetValue[0] = 500 - offsetValue[0];
+        offsetValue[1] = 500 - offsetValue[1];
+        offsetValue[2] = 500 - offsetValue[2];
+        offsetValue[3] = 500 - offsetValue[3];
     }
 }
 
