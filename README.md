@@ -1,4 +1,4 @@
-﻿﻿# COOLFLY-Ground SDK Instructions 
+# COOLFLY-Ground SDK Instructions 
 
 
 The recommended configuration:
